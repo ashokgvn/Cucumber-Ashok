@@ -75,6 +75,39 @@ Examples:
 |CustomerName|address|city|country|cperson|pnumber|mail|mnumber|note|
 |First Customer|Srnagar|Hydearabd|India|ranga|4569874569|test@gmail.com|9876543212|iam new customer|
 |second Customer|Srnagar|Hydearabd|India|ranga|4569874569|test@gmail.com|9876543212|iam new customer|
-
-
+@StockItems
+Scenario Outline:
+Validate Customer Add with multiple data
+Given Launch Browser
+When Launch Application Url
+And Wait for username with "id" and "username"
+And Enter username with "id" and "username" and "admin"
+And Enter password with "name" and "password" and "master"
+And Click Login button with "xpath" and "//button[@id='btnsubmit']"
+And wait for Logout link with "xpath" and "(//a[starts-with(text(),' Logout')])[2]"
+Then verify page title with "Dashboard « Stock Accounting"
+When Wait for Stock items link with "xpath" and "//a[text()='Stock Items ']"
+When Click Stock items link with "xpath" and "//a[text()='Stock Items ']"
+When Wait for Add Icon button with "xpath" and "(//span[@data-caption='Add'])[1]"
+When Click Add icon button with "xpath" and "(//span[@data-caption='Add'])[1]"
+When wait for Category listbox with "name" and "x_Category"
+When Select item in "<Category>" with "id" and "x_Category"
+When Select item in "<SupplierNumber>" with "name" and "x_Supplier_Number" 
+When capture in StockNumber with "name" and "x_Stock_Number" 
+When Enter in "<Stockname>" with "id" and "x_Stock_Name" 
+When Select item in "<UnitofMeasurement>" with "xpath" and "//select[@id='x_Unit_Of_Measurement']" 
+When Enter in "<Purchasingprice>" with "xpath" and "//input[@id='x_Purchasing_Price']" 
+When Enter in "<sellingprice>" with "xpath" and "//input[@id='x_Selling_Price']"  
+When Enter in "<note>" with "xpath" and "//*[@id='x_Notes']" 
+When Click Add button with "id" and "btnAction"
+When Wait for confirm ok button with "xpath" and "//button[normalize-space()='OK!']"
+When Click confirm ok button with "xpath" and "//button[normalize-space()='OK!']"
+When Wait for alert ok button with "xpath" and "(//button[contains(text(),'OK')])[6]"
+When Click alert ok button with "xpath" and "(//button[contains(text(),'OK')])[6]"
+Then verify customer number
+When Close app Browser
+Examples:
+|Category|SupplierNumber|Stockname|UnitofMeasurement|Purchasingprice|sellingprice|note|
+|1			|1							|Mobile		|1								|300000					|500000|new stock|
+|2			|2							|Books		|2								|300000					|500000|new stock|
 

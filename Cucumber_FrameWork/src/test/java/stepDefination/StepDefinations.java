@@ -21,7 +21,7 @@ public class StepDefinations {
 
 	@When("Wait for username with {string} and {string}")
 	public void wait_for_username_with_and(String LType, String LValue) {
-	    FunctionLibrary.waitForElement(LType, LValue, "10");
+	    FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Enter username with {string} and {string} and {string}")
@@ -41,7 +41,7 @@ public class StepDefinations {
 
 	@When("wait for Logout link with {string} and {string}")
 	public void wait_for_Logout_link_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@Then("verify page title with {string}")
@@ -51,7 +51,7 @@ public class StepDefinations {
 
 	@When("Wait for supplier link with {string} and {string}")
 	public void wait_for_supplier_link_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Click Supplier link with {string} and {string}")
@@ -61,7 +61,7 @@ public class StepDefinations {
 
 	@When("Wait for Add Icon button with {string} and {string}")
 	public void wait_for_Add_Icon_button_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Click Add icon button with {string} and {string}")
@@ -71,7 +71,7 @@ public class StepDefinations {
 
 	@When("wait for Supplier number with {string} and {string}")
 	public void wait_for_Supplier_number_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Capture Supplier number with {string} and {string}")
@@ -91,7 +91,7 @@ public class StepDefinations {
 
 	@When("Wait for confirm ok button with {string} and {string}")
 	public void wait_for_confirm_ok_button_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Click confirm ok button with {string} and {string}")
@@ -101,7 +101,7 @@ public class StepDefinations {
 
 	@When("Wait for alert ok button with {string} and {string}")
 	public void wait_for_alert_ok_button_with_and(String LType, String LValue) {
-		FunctionLibrary.waitForElement(LType, LValue, "10");
+		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Click alert ok button with {string} and {string}")
@@ -120,7 +120,7 @@ public class StepDefinations {
 	}
 	@When("Wait for Customer link with {string} and {string}")
 	public void wait_for_Customer_link_with_and(String LType, String LValue) {
-	    FunctionLibrary.waitForElement(LType, LValue, "10");
+	    FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Click Customer link with {string} and {string}")
@@ -130,7 +130,7 @@ public class StepDefinations {
 
 	@When("wait for Customer number with {string} and {string}")
 	public void wait_for_Customer_number_with_and(String LType, String LValue) {
-	    FunctionLibrary.waitForElement(LType, LValue, "10");
+	    FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
 	@When("Capture Customer number with {string} and {string}")
@@ -142,7 +142,28 @@ public class StepDefinations {
 	public void verify_customer_number() throws Throwable {
 	   FunctionLibrary.customerTable();
 	}
+	@When("Wait for Stock items link with {string} and {string}")
+	public void wait_for_Stock_items_link_with_and(String LType, String LValue) {
+		FunctionLibrary.waitForElement(LType, LValue, "20");
+	}
 
+	@When("Click Stock items link with {string} and {string}")
+	public void click_Stock_items_link_with_and(String LType, String LValue) {
+		FunctionLibrary.clickAction(LType, LValue);
+	}
 
+	@When("wait for Category listbox with {string} and {string}")
+	public void wait_for_Category_listbox_with_and(String LType, String LValue) {
+		FunctionLibrary.waitForElement(LType, LValue, "20");
+	}
+
+	@When("capture in StockNumber with {string} and {string}")
+	public void capture_in_StockNumber_with_and(String LType, String LValue) throws Throwable {
+		FunctionLibrary.captureStock(LType, LValue);
+	}
+	@When("Select item in {string} with {string} and {string}")
+	public void select_item_in_with_and(String TestData, String Ltype, String Lvalue) {
+	    FunctionLibrary.dropDownAction(Ltype, Lvalue, TestData);
+	}
 
 }
