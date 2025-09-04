@@ -117,5 +117,5 @@ Feature:
 
     Examples: 
       | Category | SupplierNumber | Stockname | UnitofMeasurement | Purchasingprice | sellingprice | note      |
-      |        1 |              1 | Mobile    |                 1 |          300000 |       500000 | new stock |
+      |        1 |              1 | Mobiles   |                 1 |          300000 |       500000 | new stock |
       |        2 |              2 | books     |                 2 |          300000 |       500000 | new stock |

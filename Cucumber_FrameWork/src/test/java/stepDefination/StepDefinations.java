@@ -143,7 +143,7 @@ public class StepDefinations {
 	   FunctionLibrary.customerTable();
 	}
 	@When("Wait for Stock items link with {string} and {string}")
-	public void wait_for_Stock_items_link_with_and(String LType, String LValue) {
+	public void wait_for_Stock_items_link_with_and(String LType, String LValue) throws InterruptedException {
 		FunctionLibrary.waitForElement(LType, LValue, "20");
 	}
 
@@ -152,9 +152,10 @@ public class StepDefinations {
 		FunctionLibrary.clickAction(LType, LValue);
 	}
 
-	@When("wait for Category listbox with {string} and {string}")
-	public void wait_for_Category_listbox_with_and(String LType, String LValue) {
+	@When("wait for Category listbox with {string} and {string}") 
+	public void wait_for_Category_listbox_with_and(String LType, String LValue) throws Throwable {
 		FunctionLibrary.waitForElement(LType, LValue, "20");
+		Thread.sleep(5000);
 	}
 
 	@When("capture in StockNumber with {string} and {string}")
